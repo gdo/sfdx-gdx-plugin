@@ -1,0 +1,72 @@
+{
+  "name": "sfdx-gdx-plugin",
+  "description": "GDO Developer experience",
+  "version": "0.1.0",
+  "author": "gdo",
+  "bugs": "https://github.com/gdo/sfdx-gdx-plugin/issues",
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/errors": "^1",
+    "@salesforce/command": "^2",
+    "@salesforce/core": "^2",
+    "change-case": "^4.1.1",
+    "ejs": "^3.0.1",
+    "inquirer": "^7.0.6",
+    "tslib": "^1"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1",
+    "@oclif/plugin-help": "^2",
+    "@oclif/test": "^1",
+    "@salesforce/dev-config": "1.4.1",
+    "@types/chai": "^4",
+    "@types/ejs": "^3.0.1",
+    "@types/inquirer": "^6.5.0",
+    "@types/mocha": "^5",
+    "@types/node": "^13.9.0",
+    "chai": "^4",
+    "globby": "^8",
+    "mocha": "^5",
+    "nyc": "^14",
+    "ts-node": "^8",
+    "tslint": "^5"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/lib",
+    "/messages",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/gdo/sfdx-gdx-plugin",
+  "keywords": [
+    "sfdx-plugin"
+  ],
+  "license": "MIT",
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "sfdx",
+    "topics": {
+      "hello": {
+        "description": "Commands to say hello."
+      },
+      "init": {
+        "description": "Command to init plugin"
+      }
+    },
+    "devPlugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "gdo/sfdx-gdx-plugin",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "posttest": "tslint -p test -t stylish",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif-dev readme && git add README.md"
+  }
+}

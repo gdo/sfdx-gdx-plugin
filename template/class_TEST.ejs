@@ -1,0 +1,17 @@
+@IsTest
+public with sharing class <%= className %> {
+  public <%= className %>() {
+  }
+
+  @IsTest
+  public static void shouldXXX() {
+    // Given
+
+    // When
+    Test.startTest();
+    Test.stopTest();
+
+    // Then
+    system.assertEquals(true, false);
+  }
+}

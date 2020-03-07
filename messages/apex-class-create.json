@@ -1,0 +1,9 @@
+{
+  "commandDescription": "Init files for the plugins",
+  "packageName": "package Name",
+  "className": "class Name",
+  "errorNoPascalCase": "not in PascalCase",
+  "errorNoPackage": "package unknown",
+  "errorNoDir": "directory doesn't exist",
+  "errorFileAlreadyExist": "file already exist"
+}
