@@ -18,7 +18,7 @@ async function packageGet(name: string): Promise<any> {
   const project = await SfdxProject.resolve();
   const projectJson = await project.resolveProjectConfig();
 
-  for (let i = 0; i < projectJson.packageDirectories.length; i += 1) {
+  for (let i = 0; i < projectJson.packageDirectories.length; i += 1) { // eslint-disable-line 
     const packageDescription = projectJson.packageDirectories[i];
     if (packageDescription.package === name) {
       return packageDescription;
